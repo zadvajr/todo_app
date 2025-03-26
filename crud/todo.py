@@ -40,3 +40,5 @@ class TodoCrud:
     @staticmethod
     def list_todos_by_user(db: Session, todo_id: UUID):
         return db.exec(select(Todo).where(Todo.owner_id == user_id)).all()
+
+todo_crud = TodoCrud()
