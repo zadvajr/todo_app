@@ -2,7 +2,7 @@ import uuid
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional
 from pydantic import EmailStr
-from uuid import UUId
+from uuid import UUID
 
 class UserBase(SQLModel):
     name: str

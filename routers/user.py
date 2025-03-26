@@ -5,7 +5,7 @@ from models import UserCreate, UserRead
 from crud.user import user_crud
 from uuid import UUID
 
-router = APIRouter(prefix="/users", tags["Users"])
+router = APIRouter(prefix="/users", tags=["Users"])
 
 @router.post("/", response_model=UserRead)
 def create_user_endpoint(user: UserCreate, db: Session = Depends(get_session)):

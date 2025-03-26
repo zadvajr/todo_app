@@ -23,7 +23,7 @@ def list_todos_endpoints(db: Session = Depends(get_session)):
     return todo_crud.list_todos(db)
 
 @router.put("/{todo_id}", response_model=TodoRead)
-def update_todo_endpoint(todo_id: UUId, todo: TodoCreate, db: Session = Depends(get_session)):
+def update_todo_endpoint(todo_id: UUID, todo: TodoCreate, db: Session = Depends(get_session)):
     updated_todo = todo_crud.update_todo(db, todo_id, todo)
     if not updated_todo:
         raise HTTPException(status_code=404, detail="Todo not found!")

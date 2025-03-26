@@ -12,7 +12,7 @@ def on_startup():
 
 # include routers
 app.include_router(user.router)
-app.include_router(user.router)
+app.include_router(todo.router)
 
 @app.get("/")
 def home():
